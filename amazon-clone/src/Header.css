@@ -30,8 +30,8 @@
   }
 
 .header__searchIcon {
-    padding: 5px;
-    height: 22px;
+    padding: 4px;
+    height: 20px;
     background-color: #cd9042;
 }
 
@@ -64,6 +64,5 @@
 }
 
 .headerBasketCount {
-    margin-left: 10px;
     margin-right: 10px;
 }
