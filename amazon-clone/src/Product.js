@@ -1,32 +1,52 @@
-import React from 'react'
-import "./Product.css"
+import React from "react";
+import "./Product.css";
+import { useStateValue } from "./StateProvider";
 
-function Product( {title, image, price, rating}) {
+function Product({ id, title, image, price, rating }) {
+  const [{ cart }, dispatch] = useStateValue();
+
+  // for debugging purposes
+  // console.log("this is the cart", cart);
+
+  const addToCart = () => {
+    //dispatch the item to the data layer
+    dispatch({
+      type: "ADD_TO_CART",
+      item: {
+        id: id,
+        title: title,
+        image: image,
+        price: price,
+        rating: rating,
+      },
+    });
+  };
+
   return (
-    <div className='product'>
-        <div className="product__info">
-            <p>{title}</p>
-            <p className="product__price">
-                <small>$</small>
-                <strong>{price}</strong>
-            </p>
-            <div className="product__rating">
-                {Array(rating)
-                    .fill()
-                    .map((_,i) => (
-                        <p>★</p>
-                    ))}
-                {Array(5 - rating)
-                    .fill()
-                    .map((_,i) => (
-                        <p>☆</p>
-                    ))}
-            </div>
+    <div className="product">
+      <div className="product__info">
+        <p>{title}</p>
+        <p className="product__price">
+          <small>$</small>
+          <strong>{price}</strong>
+        </p>
+        <div className="product__rating">
+          {Array(rating)
+            .fill()
+            .map(() => (
+              <p>★</p>
+            ))}
+          {Array(5 - rating)
+            .fill()
+            .map(() => (
+              <p>☆</p>
+            ))}
         </div>
-        <img src={image} alt=''/>
-        <button> Add to Cart</button> 
+      </div>
+      <img src={image} alt="" />
+      <button onClick={addToCart}> Add to Cart</button>
     </div>
-  )
+  );
 }
 
-export default Product
+export default Product;
