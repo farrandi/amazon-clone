@@ -56,7 +56,7 @@ function Home() {
         <Product
           id="6234"
           title="Some mug made of ceramic, some descriptions, some more descriptions"
-          price="8.85"
+          price={8.85}
           image="https://cb2.scene7.com/is/image/CB2/CaviarWtRcyclClyMugSHS22/$web_pdp_main_carousel_md$/211115123051/caviar-white-recycled-clay-mug.jpg"
           rating={3}
         />
