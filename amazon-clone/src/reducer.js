@@ -24,6 +24,7 @@ const reducer = (state, action) => {
         (cartItem) => cartItem.id === action.id
       );
       let newCart = [...state.cart];
+
       // delete that item
       if (index >= 0) {
         newCart.splice(index, 1);
@@ -35,6 +36,12 @@ const reducer = (state, action) => {
       return {
         ...state,
         cart: newCart,
+      };
+
+    case "SET_USER":
+      return {
+        ...state,
+        user: action.user,
       };
 
     default:

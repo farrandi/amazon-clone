@@ -1,8 +1,14 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Login.css";
+import { auth } from "./firebase";
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
 
 function Login() {
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -10,12 +16,26 @@ function Login() {
     e.preventDefault();
 
     //link to firebase
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        navigate("/");
+      })
+      .catch((error) => alert(error.message));
   };
 
   const register = (e) => {
     e.preventDefault();
 
     //link to firebase
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        // succesfully created a user
+        console.log(userCredential);
+        if (userCredential) {
+          navigate("/");
+        }
+      })
+      .catch((error) => alert(error.message));
   };
 
   return (

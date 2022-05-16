@@ -4,8 +4,34 @@ import Home from "./Home";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Checkout from "./Checkout";
 import Login from "./Login";
+import { useEffect } from "react";
+import { auth } from "./firebase";
+import { useStateValue } from "./StateProvider";
 
 function App() {
+  const [{ user }, dispatch] = useStateValue();
+
+  useEffect(() => {
+    // only run once when app component loads
+    auth.onAuthStateChanged((authUser) => {
+      console.log("THE USER IS >>>", authUser);
+
+      if (authUser) {
+        // user just logged in/ was logged in
+        dispatch({
+          type: "SET_USER",
+          user: authUser,
+        });
+      } else {
+        // user has logged out
+        dispatch({
+          type: "SET_USER",
+          user: null,
+        });
+      }
+    });
+  }, []);
+
   return (
     <Router>
       <div className="app">
