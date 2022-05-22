@@ -13,6 +13,8 @@ Check out the <a href="https://clone-17c13.web.app/" target="_blank">Project</a>
 - Add/ Remove items to cart (changes cart item number - top right)
 - Checkout page
 - Login Page (you can make any user and password)
+- Payment page
+- Order History page
 
 **Existing user you can use:** </br>
 _username_: test@gmail.com </br>
