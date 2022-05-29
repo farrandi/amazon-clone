@@ -4,7 +4,7 @@ This is a personal project that I made to develop my full-stack skills and get u
 
 Check out the <a href="https://clone-17c13.web.app/" target="_blank">Project</a> or see the demo video below (click the image)
 
-[![Watch the Video](https://media-exp1.licdn.com/dms/image/sync/C5627AQH0EWQukd89qQ/articleshare-shrink_1280_800/0/1653113521752?e=1653721200&v=beta&t=xRyfrxZpDLYtDZtiLUroJclXhec3WFetQyi6wJdzlSg)](https://youtu.be/smjN--9sI3o)
+[![Watch the Video](https://albumizr.com/a/dV0P)](https://youtu.be/smjN--9sI3o)
 
 ## Try out the website!
 
