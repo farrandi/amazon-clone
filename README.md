@@ -28,7 +28,5 @@ _password_: 123456
 - JavaScript for application functionality and dynamic rendering
 - React Context for add/remove items to cart while updating subtotal and cart number
 - Firebase user-authentication for user management
-
-### In-progress
-
-- Realtime database, planning to use Firestore, to track order history of each user
+- Realtime database (firestore) to track order history of each user
+- Used Stripe Js to process credit card payments
